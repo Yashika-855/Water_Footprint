@@ -1,0 +1,5 @@
+dataset,version,download_date,spatial_resolution,temporal_coverage,file_name,size_mb,url_or_doi,notes
+Mialyk et al. ACEA water footprints,,,5 arcmin (0.0833 deg),1990-2019 (using 2010-2019 mean),unit_wf_selected_crops_average_2010_2019.zip,,10.4121/7b45bcc6-686b-404d-a910-13c87156716a,Target variable. RECORD WHICH VERSION (v1/v2/v3).
+GSWP3-W5E5 obsclim,,,0.5 deg,1901-2019 daily,,,https://data.isimip.org,Climate predictors. Add one row per variable file.
+GGCMI Phase 3 crop calendar,,,0.5 deg,static (multi-year average),,,10.5281/zenodo.5062513,swh/wwh x noirr/firr
+FAO-UNESCO Digital Soil Map of the World,,,1:5000000 vector,static,,,https://www.fao.org/soils-portal/,Record exactly which attributes were retained.

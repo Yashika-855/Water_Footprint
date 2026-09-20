@@ -1,0 +1,131 @@
+# =====================================================================
+# Wheat Water Footprint ML - central configuration
+# Every script reads this file. Change parameters HERE, never inline.
+# =====================================================================
+
+project:
+  name: Water_Footprint
+  base_paper: "Emec et al. (2025), Ecological Processes"
+  random_state: 42
+
+paths:
+  raw_wf:        data/raw/wf
+  raw_climate:   data/raw/climate
+  raw_calendar:  data/raw/crop_calendar
+  raw_soil:      data/raw/soil
+  interim:       data/interim
+  processed:     data/processed
+  metadata:      metadata
+  figures:       results/figures
+  tables:        results/metrics
+  predictions:   results/predictions
+  models:        models
+
+target:
+  crop: wheat
+  # Paper uses the 2010-2019 global average
+  year_start: 2010
+  year_end:   2019
+  # Column names as documented in the repository README (units: m3/t)
+  variables:
+    green: green_wf
+    blue:  blue_wf
+    total: total_wf
+  unit: "m3/t"
+  # Source WF grid is 5 arcmin = 0.083333 deg.
+  # Paper reduces it to ~0.417 deg => 5x5 block aggregation.
+  source_resolution_deg: 0.0833333
+  target_resolution_deg: 0.4166667
+  coarsen_factor: 5
+  aggregation: mean          # mean | median  (document your choice)
+
+output:
+  # Interim/processed file names, matching the README's data workflow
+  format: csv                # csv | parquet
+  wf_table:        wf_wheat_2010_2019.csv
+  calendar_table:  wheat_crop_calendar.csv
+  locations_table: wheat_locations.csv
+  climate_table:   climate_features_2010_2019.csv
+  soil_table:      soil_features.csv
+  master_table:    master_wheat_dataset.csv
+  selected_table:  selected_features.csv
+
+climate:
+  dataset: GSWP3-W5E5
+  scenario: obsclim
+  resolution_deg: 0.5
+  # variable -> monthly aggregation operation. DOCUMENT any change here:
+  # this table is the single source of truth for the climate stage.
+  # ALWAYS verify the NetCDF variable attributes before trusting `convert`.
+  variables:
+    pr:       {agg: sum,  out_unit: "mm/month",  convert: "kgm2s_to_mm"}
+    sfcWind:  {agg: mean, out_unit: "m/s",       convert: null}
+    tasmin:   {agg: mean, out_unit: "degC",      convert: "K_to_C"}
+    tasmax:   {agg: mean, out_unit: "degC",      convert: "K_to_C"}
+    hurs:     {agg: mean, out_unit: "%",         convert: null}
+    rsds:     {agg: mean, out_unit: "W/m2",      convert: null}
+    ps:       {agg: mean, out_unit: "Pa",        convert: null}
+
+crop_calendar:
+  dataset: "GGCMI Phase 3 (Jaegermeyr et al. 2021)"
+  resolution_deg: 0.5
+  # swh = spring wheat, wwh = winter wheat; noirr = rainfed, firr = irrigated
+  wheat_types: [swh, wwh]
+  irrigation:  [noirr, firr]
+  default_wheat_type: swh
+  default_irrigation: noirr
+  # Paper rule: a month with <= 7 cultivation days is NOT a cultivation month
+  min_cultivation_days: 7
+
+soil:
+  dataset: "FAO/UNESCO Digital Soil Map of the World (DSMW)"
+  # Fill this list ONLY after checking the paper's Table 1 / supplementary.
+  # Do not invent soil variables. Leaving it empty makes 04_prepare_soil.py
+  # fail loudly with the available column list - that is intentional.
+  attributes: []
+  categorical_encoding: onehot     # onehot | ordinal | none
+
+preprocess:
+  drop_incomplete: true
+  scaler: standard                 # paper uses StandardScaler
+  scale_target: false              # do NOT scale y unless paper requires it
+  test_size: 0.2
+  split_strategy: random           # random | spatial_block  (see README sec. 14)
+  # Paper reference counts - sanity checks, NOT hard requirements
+  paper_reference:
+    initial_locations: 17897
+    after_cleaning:    17552
+    train:             14042
+    test:               3510
+
+feature_selection:
+  n_features: 20
+  pearson_threshold: 0.0           # screening only; ranking comes from XGBoost
+  xgb_params:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+
+clustering:
+  k_range: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+  k_final: 5                       # paper value
+  methods: [kmeans, hierarchical]
+  hierarchical_linkage: ward
+
+model:
+  estimator: AdaBoostRegressor
+  base_estimator: DecisionTreeRegressor
+  # NOTE: the paper does not publish a complete hyperparameter table.
+  # These are library defaults. Declare them as such in your report.
+  params:
+    n_estimators: 50
+    learning_rate: 1.0
+    loss: linear
+    base_max_depth: 3
+  hyperparameter_source: "sklearn defaults (paper values unavailable)"
+
+evaluation:
+  metrics: [MAE, MSE, RMSE, MAPE, R2, test_score]
+  mape_as_percent: true            # README sec. 15 defines MAPE x 100
