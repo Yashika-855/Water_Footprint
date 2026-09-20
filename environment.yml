@@ -1,0 +1,24 @@
+name: wheat-wf-ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - xarray
+  - netcdf4
+  - h5netcdf
+  - scipy
+  - scikit-learn
+  - geopandas
+  - shapely
+  - pyproj
+  - rioxarray
+  - rasterio
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - joblib
+  - openpyxl
+  - jupyter
+  - tqdm

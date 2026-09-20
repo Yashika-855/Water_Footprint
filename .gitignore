@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data - keep raw/large files out of Git
+data/raw/*
+data/interim/*
+data/processed/*
+
+# Models/results generated locally
+models/*.joblib
+models/*.pkl
+results/predictions/*
+results/figures/*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Secrets
+.env
+*.key
+*.token
