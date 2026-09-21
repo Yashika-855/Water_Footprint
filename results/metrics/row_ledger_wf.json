@@ -1,0 +1,30 @@
+[
+  {
+    "stage": "wf",
+    "step": "cells after 5x5 coarsening",
+    "n_rows": 373248,
+    "delta": null,
+    "note": ""
+  },
+  {
+    "stage": "wf",
+    "step": "cells with green+blue present",
+    "n_rows": 2353,
+    "delta": -370895,
+    "note": "ocean / non-wheat cells removed"
+  },
+  {
+    "stage": "wf",
+    "step": "cells with total_wf > 0",
+    "n_rows": 2353,
+    "delta": 0,
+    "note": ""
+  },
+  {
+    "stage": "wf",
+    "step": "final wheat locations",
+    "n_rows": 2353,
+    "delta": 0,
+    "note": ""
+  }
+]

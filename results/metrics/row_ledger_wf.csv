@@ -1,0 +1,5 @@
+stage,step,n_rows,delta,note
+wf,cells after 5x5 coarsening,373248,,
+wf,cells with green+blue present,2353,-370895.0,ocean / non-wheat cells removed
+wf,cells with total_wf > 0,2353,0.0,
+wf,final wheat locations,2353,0.0,

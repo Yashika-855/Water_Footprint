@@ -22,16 +22,13 @@ from .io_utils import RowLedger, save_table
 
 log = get_logger(__name__)
 
-# Candidate variable names inside the ACEA NetCDF files. The provider readme.pdf
-# is authoritative - verify and EDIT this map rather than guessing.
 WF_VARIABLE_CANDIDATES = {
-    "green": ["wf_green", "wfg", "green_wf", "unit_wf_green"],
-    "blue":  ["wf_blue", "wfb", "blue_wf", "unit_wf_blue"],
+    "green": ["wf_unit_rainfed_green", "wf_unit_irrigated_green"],
+    "blue":  ["wf_unit_rainfed_blue", "wf_unit_irrigated_blue"],
 }
 
 
 def find_wheat_files(raw_dir: str | Path) -> list[Path]:
-    """Locate wheat NetCDF files in data/raw/wf/."""
     raw_dir = Path(raw_dir)
     files = sorted(p for p in raw_dir.rglob("*.nc*")
                    if "wheat" in p.name.lower() or "_whe" in p.name.lower())
@@ -43,6 +40,10 @@ def find_wheat_files(raw_dir: str | Path) -> list[Path]:
         )
     log.info("Wheat WF files found: %s", [f.name for f in files])
     return files
+
+
+def _has_rainfed_irrigated_split(ds: xr.Dataset) -> bool:
+    return all(v in ds.data_vars for v in WF_VARIABLE_CANDIDATES["green"])
 
 
 def _resolve_variable(ds: xr.Dataset, component: str) -> str:
@@ -57,7 +58,6 @@ def _resolve_variable(ds: xr.Dataset, component: str) -> str:
 
 
 def build_target(cfg: dict) -> pd.DataFrame:
-    """Load wheat WF, coarsen to the master grid, return a tidy table."""
     tcfg = cfg["target"]
     g, b, t = (tcfg["variables"]["green"], tcfg["variables"]["blue"],
                tcfg["variables"]["total"])
@@ -74,8 +74,17 @@ def build_target(cfg: dict) -> pd.DataFrame:
                  ds.sizes["time"], tcfg["year_start"], tcfg["year_end"])
         ds = ds.mean("time", skipna=True)
 
-    green = ds[_resolve_variable(ds, "green")]
-    blue = ds[_resolve_variable(ds, "blue")]
+    if _has_rainfed_irrigated_split(ds):
+        log.warning(
+            "WF file gives rainfed/irrigated values separately, not a single "
+            "green/blue value. Averaging rainfed+irrigated per cell. "
+            "Record this as a deviation in docs/methodology.md."
+        )
+        green = (ds["wf_unit_rainfed_green"] + ds["wf_unit_irrigated_green"]) / 2
+        blue = (ds["wf_unit_rainfed_blue"] + ds["wf_unit_irrigated_blue"]) / 2
+    else:
+        green = ds[_resolve_variable(ds, "green")]
+        blue = ds[_resolve_variable(ds, "blue")]
 
     factor, how = tcfg["coarsen_factor"], tcfg["aggregation"]
     stacked = xr.Dataset({g: coarsen_grid(green, factor, how),
@@ -101,7 +110,6 @@ def build_target(cfg: dict) -> pd.DataFrame:
 
     out_dir = Path(cfg["paths"]["interim"])
     save_table(to_output_columns(df), out_dir / cfg["output"]["wf_table"])
-    # Location list that drives climate subsetting (README section 9)
     save_table(to_output_columns(df[["lat", "lon"]]),
                out_dir / cfg["output"]["locations_table"])
     return df
