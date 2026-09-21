@@ -1,4 +1,4 @@
-"""Stage 1 - build the wheat water-footprint target table.
+﻿"""Stage 1 - build the wheat water-footprint target table.
 
 Source: Mialyk et al. ACEA outputs, 4TU.ResearchData
         DOI 10.4121/7b45bcc6-686b-404d-a910-13c87156716a
@@ -77,11 +77,17 @@ def build_target(cfg: dict) -> pd.DataFrame:
     if _has_rainfed_irrigated_split(ds):
         log.warning(
             "WF file gives rainfed/irrigated values separately, not a single "
-            "green/blue value. Averaging rainfed+irrigated per cell. "
-            "Record this as a deviation in docs/methodology.md."
+            "green/blue value. Averaging whichever water system(s) have data "
+            "per cell (skipna). Record this as a deviation in docs/methodology.md."
         )
-        green = (ds["wf_unit_rainfed_green"] + ds["wf_unit_irrigated_green"]) / 2
-        blue = (ds["wf_unit_rainfed_blue"] + ds["wf_unit_irrigated_blue"]) / 2
+        green = xr.concat(
+            [ds["wf_unit_rainfed_green"], ds["wf_unit_irrigated_green"]],
+            dim="water_system"
+        ).mean("water_system", skipna=True)
+        blue = xr.concat(
+            [ds["wf_unit_rainfed_blue"], ds["wf_unit_irrigated_blue"]],
+            dim="water_system"
+        ).mean("water_system", skipna=True)
     else:
         green = ds[_resolve_variable(ds, "green")]
         blue = ds[_resolve_variable(ds, "blue")]
