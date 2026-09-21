@@ -1,0 +1,6 @@
+feature_name,source_dataset,description,units_or_type,notes
+soil_unit_id,FAO/UNESCO DSMW,DSMW soil mapping-unit identifier for the grid cell,categorical (code),join key from spatial overlay; field name verified in Module 1 inventory
+soil_unit_symbol,FAO/UNESCO DSMW,FAO-74/90 soil unit symbol,categorical,needs numerical encoding before modelling if paper requires it
+texture_class,FAO/UNESCO DSMW,Dominant soil texture class (coarse/medium/fine),categorical,candidate feature -- verify against paper Table 1 before final inclusion
+slope_class,FAO/UNESCO DSMW,DSMW slope class (a/b/c),categorical,candidate feature -- verify against paper Table 1 before final inclusion
+drainage_class,FAO/UNESCO DSMW,Soil drainage class,categorical,candidate feature -- verify against paper Table 1 before final inclusion

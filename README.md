@@ -334,6 +334,53 @@ data/interim/climate_features_2010_2019.csv
 
 ---
 
+### Stage 4 — Soil
+
+[#stage-4--soil](#stage-4--soil)
+
+Put the downloaded FAO/UNESCO Digital Soil Map of the World (DSMW) shapefile
+set under:
+
+```
+data/raw/soil/
+```
+
+Run:
+
+```
+python scripts/04_prepare_soil.py
+```
+
+Expected output:
+
+```
+data/interim/soil_features.csv
+data/interim/soil_unmatched_cells.csv
+```
+
+Recommended fields:
+
+```
+latitude
+longitude
+soil_unit_id
+soil_unit_symbol
+texture_class
+slope_class
+drainage_class
+```
+
+The exact attribute list is **not** finalized here — per the project guide
+(Module 5), the paper does not give a complete machine-readable list of every
+soil-derived feature in the final 102-feature table. Verify the paper's
+Table 1 / supplementary material before treating any of the columns above as
+final model inputs. Do not add soil variables beyond what the paper documents.
+
+`soil_unmatched_cells.csv` lists any wheat WF-grid cells that did not fall
+inside a DSMW polygon (e.g. small islands, coastline rounding). Per the
+integration rules (guide Module 9 / Section 21), these must be investigated
+and documented, not silently dropped.
+
 ## 6. Climate unit conversions
 
 Check the actual metadata of each downloaded file before conversion.
