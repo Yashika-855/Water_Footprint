@@ -1,0 +1,18 @@
+﻿# Data files - never commit
+*.nc
+*.nc4
+*.zip
+*.shp
+*.dbf
+*.shx
+*.prj
+data/raw/**
+data/interim/**
+data/processed/**
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Allow folder structure markers through
+!**/.gitkeep
