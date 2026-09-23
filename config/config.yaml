@@ -82,7 +82,7 @@ soil:
   # Fill this list ONLY after checking the paper's Table 1 / supplementary.
   # Do not invent soil variables. Leaving it empty makes 04_prepare_soil.py
   # fail loudly with the available column list - that is intentional.
-  attributes: []
+  attributes: ["DOMSOI"]
   categorical_encoding: onehot     # onehot | ordinal | none
 
 preprocess:
