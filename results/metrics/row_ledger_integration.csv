@@ -1,0 +1,5 @@
+stage,step,n_rows,delta,note
+integration,WF master grid,2353,,
+integration,after crop-calendar join,2348,-5.0,
+integration,after climate join,2353,5.0,
+integration,after soil join,2353,0.0,

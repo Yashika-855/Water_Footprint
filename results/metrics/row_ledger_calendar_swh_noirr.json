@@ -1,0 +1,23 @@
+[
+  {
+    "stage": "calendar_swh_noirr",
+    "step": "input WF locations",
+    "n_rows": 2353,
+    "delta": null,
+    "note": ""
+  },
+  {
+    "stage": "calendar_swh_noirr",
+    "step": "after dropping cells without a calendar",
+    "n_rows": 2348,
+    "delta": -5,
+    "note": "5 unmatched"
+  },
+  {
+    "stage": "calendar_swh_noirr",
+    "step": "after requiring >=1 growing month",
+    "n_rows": 2348,
+    "delta": 0,
+    "note": ""
+  }
+]

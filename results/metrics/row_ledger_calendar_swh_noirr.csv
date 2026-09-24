@@ -1,0 +1,4 @@
+stage,step,n_rows,delta,note
+calendar_swh_noirr,input WF locations,2353,,
+calendar_swh_noirr,after dropping cells without a calendar,2348,-5.0,5 unmatched
+calendar_swh_noirr,after requiring >=1 growing month,2348,0.0,

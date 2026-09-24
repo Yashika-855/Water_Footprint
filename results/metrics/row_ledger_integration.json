@@ -1,0 +1,30 @@
+[
+  {
+    "stage": "integration",
+    "step": "WF master grid",
+    "n_rows": 2353,
+    "delta": null,
+    "note": ""
+  },
+  {
+    "stage": "integration",
+    "step": "after crop-calendar join",
+    "n_rows": 2348,
+    "delta": -5,
+    "note": ""
+  },
+  {
+    "stage": "integration",
+    "step": "after climate join",
+    "n_rows": 2353,
+    "delta": 5,
+    "note": ""
+  },
+  {
+    "stage": "integration",
+    "step": "after soil join",
+    "n_rows": 2353,
+    "delta": 0,
+    "note": ""
+  }
+]

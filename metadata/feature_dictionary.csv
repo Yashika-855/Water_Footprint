@@ -1,17 +1,95 @@
 feature,group,unit,description,n_missing
-lat,geographic,degrees,Grid-cell centre latitude,
-lon,geographic,degrees,Grid-cell centre longitude,
-planting_doy,crop_calendar,day-of-year,GGCMI Phase 3 wheat planting day,
-maturity_doy,crop_calendar,day-of-year,GGCMI Phase 3 wheat maturity day,
-season_length_days,crop_calendar,days,Total cultivation days (wraps New Year for winter wheat),
-n_growing_months,crop_calendar,count,Months passing the >7-day cultivation rule,
-pr_m01,climate,mm/month,GSWP3-W5E5 precipitation January (monthly op = sum),
-sfcWind_m01,climate,m/s,GSWP3-W5E5 wind speed January (monthly op = mean),
-tasmin_m01,climate,degC,GSWP3-W5E5 minimum temperature January (monthly op = mean),
-tasmax_m01,climate,degC,GSWP3-W5E5 maximum temperature January (monthly op = mean),
-hurs_m01,climate,%,GSWP3-W5E5 relative humidity January (monthly op = mean),
-rsds_m01,climate,W/m2,GSWP3-W5E5 shortwave radiation January (monthly op = mean),
-ps_m01,climate,Pa,GSWP3-W5E5 surface air pressure January (monthly op = mean),
-green_wf,target,m3/t,ACEA unit green water footprint 2010-2019 mean,
-blue_wf,target,m3/t,ACEA unit blue water footprint 2010-2019 mean,
-total_wf,target,m3/t,green_wf + blue_wf,
+lat,geographic,degrees,Grid-cell centre coordinate,5
+lon,geographic,degrees,Grid-cell centre coordinate,5
+planting_doy,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
+maturity_doy,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
+season_length_days,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
+n_growing_months,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
+pr_m01,climate,mm/month,"GSWP3-W5E5 pr, month 1, monthly op = sum",1870
+pr_m02,climate,mm/month,"GSWP3-W5E5 pr, month 2, monthly op = sum",1722
+pr_m03,climate,mm/month,"GSWP3-W5E5 pr, month 3, monthly op = sum",1878
+pr_m04,climate,mm/month,"GSWP3-W5E5 pr, month 4, monthly op = sum",1858
+pr_m05,climate,mm/month,"GSWP3-W5E5 pr, month 5, monthly op = sum",510
+pr_m06,climate,mm/month,"GSWP3-W5E5 pr, month 6, monthly op = sum",630
+pr_m07,climate,mm/month,"GSWP3-W5E5 pr, month 7, monthly op = sum",645
+pr_m08,climate,mm/month,"GSWP3-W5E5 pr, month 8, monthly op = sum",790
+pr_m09,climate,mm/month,"GSWP3-W5E5 pr, month 9, monthly op = sum",2079
+pr_m10,climate,mm/month,"GSWP3-W5E5 pr, month 10, monthly op = sum",2176
+pr_m11,climate,mm/month,"GSWP3-W5E5 pr, month 11, monthly op = sum",1924
+pr_m12,climate,mm/month,"GSWP3-W5E5 pr, month 12, monthly op = sum",1863
+sfcWind_m01,climate,m/s,"GSWP3-W5E5 sfcWind, month 1, monthly op = mean",1870
+sfcWind_m02,climate,m/s,"GSWP3-W5E5 sfcWind, month 2, monthly op = mean",1722
+sfcWind_m03,climate,m/s,"GSWP3-W5E5 sfcWind, month 3, monthly op = mean",1878
+sfcWind_m04,climate,m/s,"GSWP3-W5E5 sfcWind, month 4, monthly op = mean",1858
+sfcWind_m05,climate,m/s,"GSWP3-W5E5 sfcWind, month 5, monthly op = mean",510
+sfcWind_m06,climate,m/s,"GSWP3-W5E5 sfcWind, month 6, monthly op = mean",630
+sfcWind_m07,climate,m/s,"GSWP3-W5E5 sfcWind, month 7, monthly op = mean",645
+sfcWind_m08,climate,m/s,"GSWP3-W5E5 sfcWind, month 8, monthly op = mean",790
+sfcWind_m09,climate,m/s,"GSWP3-W5E5 sfcWind, month 9, monthly op = mean",2079
+sfcWind_m10,climate,m/s,"GSWP3-W5E5 sfcWind, month 10, monthly op = mean",2176
+sfcWind_m11,climate,m/s,"GSWP3-W5E5 sfcWind, month 11, monthly op = mean",1924
+sfcWind_m12,climate,m/s,"GSWP3-W5E5 sfcWind, month 12, monthly op = mean",1863
+tasmin_m01,climate,degC,"GSWP3-W5E5 tasmin, month 1, monthly op = mean",1870
+tasmin_m02,climate,degC,"GSWP3-W5E5 tasmin, month 2, monthly op = mean",1722
+tasmin_m03,climate,degC,"GSWP3-W5E5 tasmin, month 3, monthly op = mean",1878
+tasmin_m04,climate,degC,"GSWP3-W5E5 tasmin, month 4, monthly op = mean",1858
+tasmin_m05,climate,degC,"GSWP3-W5E5 tasmin, month 5, monthly op = mean",510
+tasmin_m06,climate,degC,"GSWP3-W5E5 tasmin, month 6, monthly op = mean",630
+tasmin_m07,climate,degC,"GSWP3-W5E5 tasmin, month 7, monthly op = mean",645
+tasmin_m08,climate,degC,"GSWP3-W5E5 tasmin, month 8, monthly op = mean",790
+tasmin_m09,climate,degC,"GSWP3-W5E5 tasmin, month 9, monthly op = mean",2079
+tasmin_m10,climate,degC,"GSWP3-W5E5 tasmin, month 10, monthly op = mean",2176
+tasmin_m11,climate,degC,"GSWP3-W5E5 tasmin, month 11, monthly op = mean",1924
+tasmin_m12,climate,degC,"GSWP3-W5E5 tasmin, month 12, monthly op = mean",1863
+tasmax_m01,climate,degC,"GSWP3-W5E5 tasmax, month 1, monthly op = mean",1870
+tasmax_m02,climate,degC,"GSWP3-W5E5 tasmax, month 2, monthly op = mean",1722
+tasmax_m03,climate,degC,"GSWP3-W5E5 tasmax, month 3, monthly op = mean",1878
+tasmax_m04,climate,degC,"GSWP3-W5E5 tasmax, month 4, monthly op = mean",1858
+tasmax_m05,climate,degC,"GSWP3-W5E5 tasmax, month 5, monthly op = mean",510
+tasmax_m06,climate,degC,"GSWP3-W5E5 tasmax, month 6, monthly op = mean",630
+tasmax_m07,climate,degC,"GSWP3-W5E5 tasmax, month 7, monthly op = mean",645
+tasmax_m08,climate,degC,"GSWP3-W5E5 tasmax, month 8, monthly op = mean",790
+tasmax_m09,climate,degC,"GSWP3-W5E5 tasmax, month 9, monthly op = mean",2079
+tasmax_m10,climate,degC,"GSWP3-W5E5 tasmax, month 10, monthly op = mean",2176
+tasmax_m11,climate,degC,"GSWP3-W5E5 tasmax, month 11, monthly op = mean",1924
+tasmax_m12,climate,degC,"GSWP3-W5E5 tasmax, month 12, monthly op = mean",1863
+hurs_m01,climate,%,"GSWP3-W5E5 hurs, month 1, monthly op = mean",1870
+hurs_m02,climate,%,"GSWP3-W5E5 hurs, month 2, monthly op = mean",1722
+hurs_m03,climate,%,"GSWP3-W5E5 hurs, month 3, monthly op = mean",1878
+hurs_m04,climate,%,"GSWP3-W5E5 hurs, month 4, monthly op = mean",1858
+hurs_m05,climate,%,"GSWP3-W5E5 hurs, month 5, monthly op = mean",510
+hurs_m06,climate,%,"GSWP3-W5E5 hurs, month 6, monthly op = mean",630
+hurs_m07,climate,%,"GSWP3-W5E5 hurs, month 7, monthly op = mean",645
+hurs_m08,climate,%,"GSWP3-W5E5 hurs, month 8, monthly op = mean",790
+hurs_m09,climate,%,"GSWP3-W5E5 hurs, month 9, monthly op = mean",2079
+hurs_m10,climate,%,"GSWP3-W5E5 hurs, month 10, monthly op = mean",2176
+hurs_m11,climate,%,"GSWP3-W5E5 hurs, month 11, monthly op = mean",1924
+hurs_m12,climate,%,"GSWP3-W5E5 hurs, month 12, monthly op = mean",1863
+rsds_m01,climate,W/m2,"GSWP3-W5E5 rsds, month 1, monthly op = mean",1870
+rsds_m02,climate,W/m2,"GSWP3-W5E5 rsds, month 2, monthly op = mean",1722
+rsds_m03,climate,W/m2,"GSWP3-W5E5 rsds, month 3, monthly op = mean",1878
+rsds_m04,climate,W/m2,"GSWP3-W5E5 rsds, month 4, monthly op = mean",1858
+rsds_m05,climate,W/m2,"GSWP3-W5E5 rsds, month 5, monthly op = mean",510
+rsds_m06,climate,W/m2,"GSWP3-W5E5 rsds, month 6, monthly op = mean",630
+rsds_m07,climate,W/m2,"GSWP3-W5E5 rsds, month 7, monthly op = mean",645
+rsds_m08,climate,W/m2,"GSWP3-W5E5 rsds, month 8, monthly op = mean",790
+rsds_m09,climate,W/m2,"GSWP3-W5E5 rsds, month 9, monthly op = mean",2079
+rsds_m10,climate,W/m2,"GSWP3-W5E5 rsds, month 10, monthly op = mean",2176
+rsds_m11,climate,W/m2,"GSWP3-W5E5 rsds, month 11, monthly op = mean",1924
+rsds_m12,climate,W/m2,"GSWP3-W5E5 rsds, month 12, monthly op = mean",1863
+ps_m01,climate,Pa,"GSWP3-W5E5 ps, month 1, monthly op = mean",1870
+ps_m02,climate,Pa,"GSWP3-W5E5 ps, month 2, monthly op = mean",1722
+ps_m03,climate,Pa,"GSWP3-W5E5 ps, month 3, monthly op = mean",1878
+ps_m04,climate,Pa,"GSWP3-W5E5 ps, month 4, monthly op = mean",1858
+ps_m05,climate,Pa,"GSWP3-W5E5 ps, month 5, monthly op = mean",510
+ps_m06,climate,Pa,"GSWP3-W5E5 ps, month 6, monthly op = mean",630
+ps_m07,climate,Pa,"GSWP3-W5E5 ps, month 7, monthly op = mean",645
+ps_m08,climate,Pa,"GSWP3-W5E5 ps, month 8, monthly op = mean",790
+ps_m09,climate,Pa,"GSWP3-W5E5 ps, month 9, monthly op = mean",2079
+ps_m10,climate,Pa,"GSWP3-W5E5 ps, month 10, monthly op = mean",2176
+ps_m11,climate,Pa,"GSWP3-W5E5 ps, month 11, monthly op = mean",1924
+ps_m12,climate,Pa,"GSWP3-W5E5 ps, month 12, monthly op = mean",1863
+soil_DOMSOI,soil,see DSMW key,FAO/UNESCO DSMW attribute,72
+green_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",5
+blue_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",5
+total_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",5
