@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "preprocess",
+    "step": "initial observations",
+    "n_rows": 2353,
+    "delta": null,
+    "note": ""
+  },
+  {
+    "stage": "preprocess",
+    "step": "after duplicate removal",
+    "n_rows": 2350,
+    "delta": -3,
+    "note": ""
+  },
+  {
+    "stage": "preprocess",
+    "step": "after coordinate validation",
+    "n_rows": 2348,
+    "delta": -2,
+    "note": ""
+  },
+  {
+    "stage": "preprocess",
+    "step": "after valid green_wf",
+    "n_rows": 2348,
+    "delta": 0,
+    "note": ""
+  },
+  {
+    "stage": "preprocess",
+    "step": "after incomplete-record removal",
+    "n_rows": 2348,
+    "delta": 0,
+    "note": "matches the paper's 17,897 -> 17,552 step"
+  }
+]

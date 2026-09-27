@@ -45,8 +45,8 @@ def mask_non_cultivation_months(df: pd.DataFrame,
             col, flag = f"{var}_m{m:02d}", f"grow_m{m:02d}"
             if col not in out.columns or flag not in out.columns:
                 continue
-            out[col] = out[col].where(out[flag] == 1, np.nan)
-            if out[col].isna().all():
+            out[col] = out[col].where(out[flag] == 1, 0)
+            if (out[col] == 0).all():
                 removed.append(col)
     if removed:
         out = out.drop(columns=removed)

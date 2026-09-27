@@ -74,7 +74,7 @@ def sample_soil_polygons(points: pd.DataFrame, shp_path: Path,
 
 def encode_categoricals(df: pd.DataFrame, how: str = "onehot") -> pd.DataFrame:
     """Turn soil-class strings into numbers, only if the modelling step needs it."""
-    cat_cols = [c for c in df.columns if df[c].dtype == object]
+    cat_cols = df.select_dtypes(include=["object", "string", "category"]).columns.tolist()
     if not cat_cols or how == "none":
         return df
     if how == "onehot":
