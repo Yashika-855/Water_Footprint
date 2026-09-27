@@ -16,3 +16,5 @@ __pycache__/
 
 # Allow folder structure markers through
 !**/.gitkeep
+
+!data/processed/master_wheat_dataset.csv
