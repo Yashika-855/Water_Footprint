@@ -60,6 +60,10 @@ def build_feature_table(cfg: dict, df: pd.DataFrame,
                         apply_season_mask: bool = True
                         ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Return (candidate feature table, feature dictionary)."""
+    df = df.rename(columns={
+    "latitude": "lat",
+    "longitude": "lon"
+    })
     climate_vars = list(cfg["climate"]["variables"])
     if apply_season_mask:
         df = mask_non_cultivation_months(df, climate_vars)

@@ -1,0 +1,11 @@
+method,cluster,n,share
+kmeans,0,332,0.1768
+kmeans,1,714,0.3802
+kmeans,2,614,0.3269
+kmeans,3,66,0.0351
+kmeans,4,152,0.0809
+hierarchical,0,604,0.3216
+hierarchical,1,717,0.3818
+hierarchical,2,340,0.181
+hierarchical,3,154,0.082
+hierarchical,4,63,0.0335

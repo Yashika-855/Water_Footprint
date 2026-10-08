@@ -1,0 +1,3 @@
+stage,step,n_rows,delta,note
+alignment_repair,master as delivered,2353,,
+alignment_repair,"ghost rows removed, climate+soil re-attached by offset",2348,-5.0,"5 unmatched locations dropped (positions [1115, 1425, 1430, 1970, 2232])"

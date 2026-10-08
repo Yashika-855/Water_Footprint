@@ -2,27 +2,27 @@
   {
     "stage": "preprocess",
     "step": "initial observations",
-    "n_rows": 2353,
+    "n_rows": 2348,
     "delta": null,
     "note": ""
   },
   {
     "stage": "preprocess",
     "step": "after duplicate removal",
-    "n_rows": 2350,
-    "delta": -3,
+    "n_rows": 2348,
+    "delta": 0,
     "note": ""
   },
   {
     "stage": "preprocess",
     "step": "after coordinate validation",
     "n_rows": 2348,
-    "delta": -2,
+    "delta": 0,
     "note": ""
   },
   {
     "stage": "preprocess",
-    "step": "after valid green_wf",
+    "step": "after valid total_wf",
     "n_rows": 2348,
     "delta": 0,
     "note": ""

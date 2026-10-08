@@ -1,0 +1,10 @@
+metric,value
+rows as delivered,2353
+ghost rows (no coordinates),5
+rows with climate+soil from a different cell,1233
+soil agreement before,0.5733
+soil agreement after,1.0
+climate coherence before (lower is better),3.2051
+climate coherence after,1.7945
+rows with all-zero soil one-hot after repair,67
+change rows (calendar index),"[1115, 1424, 1428, 1967, 2228]"

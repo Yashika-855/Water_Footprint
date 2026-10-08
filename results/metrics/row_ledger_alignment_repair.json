@@ -1,0 +1,16 @@
+[
+  {
+    "stage": "alignment_repair",
+    "step": "master as delivered",
+    "n_rows": 2353,
+    "delta": null,
+    "note": ""
+  },
+  {
+    "stage": "alignment_repair",
+    "step": "ghost rows removed, climate+soil re-attached by offset",
+    "n_rows": 2348,
+    "delta": -5,
+    "note": "5 unmatched locations dropped (positions [1115, 1425, 1430, 1970, 2232])"
+  }
+]
