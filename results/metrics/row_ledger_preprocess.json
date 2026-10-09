@@ -2,22 +2,22 @@
   {
     "stage": "preprocess",
     "step": "initial observations",
-    "n_rows": 2348,
+    "n_rows": 2353,
     "delta": null,
     "note": ""
   },
   {
     "stage": "preprocess",
     "step": "after duplicate removal",
-    "n_rows": 2348,
-    "delta": 0,
+    "n_rows": 2350,
+    "delta": -3,
     "note": ""
   },
   {
     "stage": "preprocess",
     "step": "after coordinate validation",
     "n_rows": 2348,
-    "delta": 0,
+    "delta": -2,
     "note": ""
   },
   {
