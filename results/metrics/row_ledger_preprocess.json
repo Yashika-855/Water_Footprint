@@ -22,7 +22,7 @@
   },
   {
     "stage": "preprocess",
-    "step": "after valid green_wf",
+    "step": "after valid total_wf",
     "n_rows": 2348,
     "delta": 0,
     "note": ""

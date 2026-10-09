@@ -2,5 +2,5 @@ stage,step,n_rows,delta,note
 preprocess,initial observations,2353,,
 preprocess,after duplicate removal,2350,-3.0,
 preprocess,after coordinate validation,2348,-2.0,
-preprocess,after valid green_wf,2348,0.0,
+preprocess,after valid total_wf,2348,0.0,
 preprocess,after incomplete-record removal,2348,0.0,"matches the paper's 17,897 -> 17,552 step"

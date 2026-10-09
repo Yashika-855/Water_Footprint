@@ -1,10 +1,10 @@
 feature,group,unit,description,n_missing
-lat,geographic,degrees,Grid-cell centre coordinate,5
-lon,geographic,degrees,Grid-cell centre coordinate,5
-planting_doy,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
-maturity_doy,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
-season_length_days,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
-n_growing_months,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,5
+lat,geographic,degrees,Grid-cell centre coordinate,0
+lon,geographic,degrees,Grid-cell centre coordinate,0
+planting_doy,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,0
+maturity_doy,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,0
+season_length_days,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,0
+n_growing_months,crop_calendar,day / count,GGCMI Phase 3 wheat calendar,0
 pr_m01,climate,mm/month,"GSWP3-W5E5 pr, month 1, monthly op = sum",0
 pr_m02,climate,mm/month,"GSWP3-W5E5 pr, month 2, monthly op = sum",0
 pr_m03,climate,mm/month,"GSWP3-W5E5 pr, month 3, monthly op = sum",0
@@ -170,6 +170,6 @@ soil_DOMSOI_Yl,soil,see DSMW key,FAO/UNESCO DSMW attribute,0
 soil_DOMSOI_Yy,soil,see DSMW key,FAO/UNESCO DSMW attribute,0
 soil_DOMSOI_Zg,soil,see DSMW key,FAO/UNESCO DSMW attribute,0
 soil_DOMSOI_Zo,soil,see DSMW key,FAO/UNESCO DSMW attribute,0
-green_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",5
-blue_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",5
-total_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",5
+green_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",0
+blue_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",0
+total_wf,target,m3/t,"ACEA unit WF, 2010-2019 mean",0
