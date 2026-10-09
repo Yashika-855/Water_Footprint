@@ -1,0 +1,27 @@
+source,file,relative_path,size_mb,format,dims,variables,coords,lon_convention,lat_range,units,missing_value
+wf,wf_unit_wheat_average_2010_2019.nc,data\raw\wf\wf_unit_wheat_average_2010_2019.nc,5.79,nc,"{'lat': 2160, 'lon': 4320}","wf_unit_rainfed_green, wf_unit_rainfed_blue, wf_unit_irrigated_green, wf_unit_irrigated_blue, wf_unit_rainfed, wf_unit_irrigated, wf_unit_total","lon, lat",-180..180,-89.958..89.958,"{'wf_unit_rainfed_green': 'n/a', 'wf_unit_rainfed_blue': 'n/a', 'wf_unit_irrigated_green': 'n/a', 'wf_unit_irrigated_blue': 'n/a'}","{'wf_unit_rainfed_green': 'n/a', 'wf_unit_rainfed_blue': 'n/a', 'wf_unit_irrigated_green': 'n/a', 'wf_unit_irrigated_blue': 'n/a'}"
+climate,gswp3-w5e5_obsclim_hurs_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_hurs_global_daily_2011_2019.nc,2209.2,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",hurs,"lon, lat, time",-180..180,-89.750..89.750,{'hurs': '%'},{'hurs': 'n/a'}
+climate,gswp3-w5e5_obsclim_pr_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_pr_global_daily_2011_2019.nc,2111.92,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",pr,"lon, lat, time",-180..180,-89.750..89.750,{'pr': 'kg m-2 s-1'},{'pr': 'n/a'}
+climate,gswp3-w5e5_obsclim_ps_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_ps_global_daily_2011_2019.nc,1848.31,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",ps,"lon, lat, time",-180..180,-89.750..89.750,{'ps': 'Pa'},{'ps': 'n/a'}
+climate,gswp3-w5e5_obsclim_rsds_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_rsds_global_daily_2011_2019.nc,2232.74,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",rsds,"lon, lat, time",-180..180,-89.750..89.750,{'rsds': 'W m-2'},{'rsds': 'n/a'}
+climate,gswp3-w5e5_obsclim_sfcwind_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_sfcwind_global_daily_2011_2019.nc,2493.89,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",sfcwind,"lon, lat, time",-180..180,-89.750..89.750,{'sfcwind': 'm s-1'},{'sfcwind': 'n/a'}
+climate,gswp3-w5e5_obsclim_tasmax_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_tasmax_global_daily_2011_2019.nc,1842.01,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",tasmax,"lon, lat, time",-180..180,-89.750..89.750,{'tasmax': 'K'},{'tasmax': 'n/a'}
+climate,gswp3-w5e5_obsclim_tasmin_global_daily_2011_2019.nc,data\raw\climate\gswp3-w5e5_obsclim_tasmin_global_daily_2011_2019.nc,1851.44,nc,"{'time': 3287, 'lat': 360, 'lon': 720}",tasmin,"lon, lat, time",-180..180,-89.750..89.750,{'tasmin': 'K'},{'tasmin': 'n/a'}
+crop_calendar,swh_ir_ggcmi_crop_calendar_phase3_v1.01.nc4,data\raw\crop_calendar\swh_ir_ggcmi_crop_calendar_phase3_v1.01.nc4,0.14,nc4,"{'lat': 360, 'lon': 720}","planting_day, maturity_day, growing_season_length, data_source_used","lon, lat",-180..180,-89.750..89.750,"{'planting_day': 'day of year', 'maturity_day': 'day of year', 'growing_season_length': 'days', 'data_source_used': 'index'}","{'planting_day': 'n/a', 'maturity_day': 'n/a', 'growing_season_length': 'n/a', 'data_source_used': 'n/a'}"
+crop_calendar,swh_rf_ggcmi_crop_calendar_phase3_v1.01.nc4,data\raw\crop_calendar\swh_rf_ggcmi_crop_calendar_phase3_v1.01.nc4,0.14,nc4,"{'lat': 360, 'lon': 720}","planting_day, maturity_day, growing_season_length, data_source_used","lon, lat",-180..180,-89.750..89.750,"{'planting_day': 'day of year', 'maturity_day': 'day of year', 'growing_season_length': 'days', 'data_source_used': 'index'}","{'planting_day': 'n/a', 'maturity_day': 'n/a', 'growing_season_length': 'n/a', 'data_source_used': 'n/a'}"
+crop_calendar,wwh_ir_ggcmi_crop_calendar_phase3_v1.01.nc4,data\raw\crop_calendar\wwh_ir_ggcmi_crop_calendar_phase3_v1.01.nc4,0.12,nc4,"{'lat': 360, 'lon': 720}","planting_day, maturity_day, growing_season_length, data_source_used","lon, lat",-180..180,-89.750..89.750,"{'planting_day': 'day of year', 'maturity_day': 'day of year', 'growing_season_length': 'days', 'data_source_used': 'index'}","{'planting_day': 'n/a', 'maturity_day': 'n/a', 'growing_season_length': 'n/a', 'data_source_used': 'n/a'}"
+crop_calendar,wwh_rf_ggcmi_crop_calendar_phase3_v1.01.nc4,data\raw\crop_calendar\wwh_rf_ggcmi_crop_calendar_phase3_v1.01.nc4,0.11,nc4,"{'lat': 360, 'lon': 720}","planting_day, maturity_day, growing_season_length, data_source_used","lon, lat",-180..180,-89.750..89.750,"{'planting_day': 'day of year', 'maturity_day': 'day of year', 'growing_season_length': 'days', 'data_source_used': 'index'}","{'planting_day': 'n/a', 'maturity_day': 'n/a', 'growing_season_length': 'n/a', 'data_source_used': 'n/a'}"
+soil,BasicFilesSC.xls,data\raw\soil\BasicFilesSC.xls,0.65,xls,,,,,,,
+soil,DSMW.dbf,data\raw\soil\DSMW.dbf,5.77,dbf,,,,,,,
+soil,DSMW.lyr,data\raw\soil\DSMW.lyr,0.06,lyr,,,,,,,
+soil,DSMW.sbn,data\raw\soil\DSMW.sbn,0.36,sbn,,,,,,,
+soil,DSMW.sbx,data\raw\soil\DSMW.sbx,0.02,sbx,,,,,,,
+soil,DSMW.shp,data\raw\soil\DSMW.shp,51.25,shp,13 columns (5-row peek),"SNUM, FAOSOIL, DOMSOI, PHASE1, PHASE2, MISCLU1, MISCLU2, PERMAFROST, CNTCODE, CNTNAME, SQKM, COUNTRY, geometry",None,,,,n/a
+soil,DSMW.shp.xml,data\raw\soil\DSMW.shp.xml,0.0,xml,,,,,,,
+soil,DSMW.shx,data\raw\soil\DSMW.shx,0.27,shx,,,,,,,
+soil,DSMW_noborder.lyr,data\raw\soil\DSMW_noborder.lyr,0.06,lyr,,,,,,,
+soil,Generalized_SU_Info.xls,data\raw\soil\Generalized_SU_Info.xls,0.1,xls,,,,,,,
+soil,readme.doc,data\raw\soil\readme.doc,0.11,doc,,,,,,,
+soil,SoilData.doc,data\raw\soil\SoilData.doc,0.03,doc,,,,,,,
+soil,SU_Info.xls,data\raw\soil\SU_Info.xls,0.11,xls,,,,,,,
+soil,WORLD764.xls,data\raw\soil\WORLD764.xls,3.63,xls,,,,,,,
